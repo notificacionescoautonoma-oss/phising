@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificación de Seguridad | Seguridad Coautonoma CTA</title>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE175RHEVK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-ZE175RHEVK');
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFDDBNGLVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GFDDBNGLVE');
     </script>
 
     <!-- Google Fonts: Outfit -->
@@ -22,7 +22,8 @@
 
     <style>
         :root {
-            --primary: #33a155; /* Verde Coautonoma */
+            --primary: #33a155;
+            /* Verde Coautonoma */
             --primary-hover: #2a8a48;
             --bg-light: #f8fafc;
             --text-main: #1e293b;
@@ -40,7 +41,7 @@
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-light);
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(51, 161, 85, 0.05) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(51, 161, 85, 0.05) 0px, transparent 50%);
             height: 100vh;
@@ -62,8 +63,15 @@
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .logo-area {
@@ -159,8 +167,15 @@
         }
 
         @keyframes pop {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .alert-icon {
@@ -194,26 +209,28 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container" id="form-section">
         <div class="logo-area">
             <img src="logo.png" alt="Coautonoma Logo" class="logo-img">
         </div>
-        
+
         <h2>Portal de Verificación</h2>
-        <p class="description">Para continuar, por favor valide su cuenta institucional. Este proceso es obligatorio para el acceso a la red interna.</p>
-        
+        <p class="description">Para continuar, por favor valide su cuenta institucional. Este proceso es obligatorio
+            para el acceso a la red interna.</p>
+
         <form id="securityForm">
             <div class="form-group">
                 <label for="userName">Usuario Corporativo</label>
                 <input type="text" id="userName" name="userName" placeholder="ej. jrodriguez" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="userEmail">Correo Institucional</label>
                 <input type="email" id="userEmail" name="userEmail" placeholder="usuario@coautonoma.com" required>
             </div>
-            
+
             <button type="submit" id="submitBtn">Iniciar Validación</button>
         </form>
 
@@ -225,31 +242,34 @@
     <div class="warning" id="warning-section">
         <div class="alert-icon">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
             </svg>
         </div>
         <h2>¡Advertencia de Seguridad!</h2>
         <p class="bold">USTED HA PUESTO EN RIESGO LA SEGURIDAD DE COAUTONOMA CTA</p>
-        <p>Acaba de ingresar sus credenciales en un sitio no autorizado. Esto es un <strong>simulacro de phishing</strong> para evaluar la conciencia de seguridad.</p>
-        <p>En un ataque real, sus datos habrían sido robados. Por favor, reporte este incidente y espere instrucciones para su capacitación obligatoria.</p>
+        <p>Acaba de ingresar sus credenciales en un sitio no autorizado. Esto es un <strong>simulacro de
+                phishing</strong> para evaluar la conciencia de seguridad.</p>
+        <p>En un ataque real, sus datos habrían sido robados. Por favor, reporte este incidente y espere instrucciones
+            para su capacitación obligatoria.</p>
     </div>
 
     <script>
-        document.getElementById("securityForm").addEventListener("submit", function(event) {
+        document.getElementById("securityForm").addEventListener("submit", function (event) {
             event.preventDefault();
-            
+
             const submitBtn = document.getElementById("submitBtn");
             submitBtn.innerText = "Validando...";
             submitBtn.disabled = true;
 
             const userName = document.getElementById("userName").value;
             const userEmail = document.getElementById("userEmail").value;
-            
-            const formData = new URLSearchParams();
-            formData.append('entry.441023691', userName);
-            formData.append('entry.1899323116', userEmail);
 
-            fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSdBuPdtEZDLsMb0nLwLN7-Z-fUvK8tIuHVFaOSXa7dces79cg/formResponse", {
+            const formData = new URLSearchParams();
+            formData.append('entry.1319070033', userName);
+            formData.append('entry.23755005', userEmail);
+
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLSer1zuPEiBd9YZWLSmbHBnCQefjCSwh6z2ktj2NjyZGHymcEg/formResponse", {
                 method: "POST",
                 mode: "no-cors",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -268,4 +288,5 @@
         }
     </script>
 </body>
+
 </html>
